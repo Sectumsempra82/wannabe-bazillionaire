@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import classes from './Top.module.css';
+import logo from '../../../assets/img/logo.png';
 
 class Top extends Component {
     render(){
         return(
             <div className={classes.Top}>
                 <div className={classes.CentralPicture}>
-                    <h1>Who wants to be a bazillionaire?</h1>
+                    <img src={logo} alt='logo' style={{width: '40vw'}}/>
                 </div>
                 <div className={classes.Level}>
                     <p>Level 15 - 1 Million</p>

@@ -9,23 +9,38 @@
 .Answer{
     text-align: left;
     padding-left: 10%;
+    border-radius: 5px;
+    border: 1px solid blue;
+    background-color: rgba(255, 255, 255, 0.4)
+}
+
+.Answer > p {
+    background-color: rgb(138, 186, 248);
+    border-radius: 5px;
+    margin-top: 1rem;
 }
 
 .Question {
     text-align: left;
+    background-color: rgb(138, 186, 248);
+    border-radius: 5px;
+    padding: 1vw;
+    margin-bottom: 1vh;
 } 
 
 @media (min-width: 501px) {
     .Question > p{
         font-size: 2vh;
+        padding: 10px 10px 10px 10px;
     }
     .Answer{
         padding-left: 0;
+        padding: 2vh;
     }
     .Answer > p{
        
         font-size: 2vh;
         line-height: 2vh;
-        padding-top: 5vh;
+
     }
 }

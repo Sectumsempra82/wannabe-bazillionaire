@@ -10,17 +10,17 @@ class QnA extends Component {
                 <Row>
                     <Col>
                         <div className={classes.Question}>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque accumsan molestie tortor, vitae porttitor erat sollicitudin ac. Cras mi augue, vestibulum in ultricies sed, lacinia at ipsum?</p>
+                            <p>{this.props.question.question}</p>
                         </div>
                     </Col>
                 </Row>
                 <Row>
-                    <Col xs={12} md={6} className={classes.Answer}><p>A &nbsp;&nbsp;Vivamus mattis mi vel eros consectetur</p></Col>
-                    <Col xs={12} md={6} className={classes.Answer}><p>B &nbsp;&nbsp;facilisis pulvinar turpis condimentum</p></Col>
+                    <Col xs={12} md={6} className={classes.Answer}><p>A &nbsp;&nbsp;{this.props.question['A']}</p></Col>
+                    <Col xs={12} md={6} className={classes.Answer}><p>B &nbsp;&nbsp;{this.props.question['B']}</p></Col>
                 </Row>
                 <Row>
-                    <Col xs={12} md={6} className={classes.Answer}><p>C &nbsp;&nbsp;eu sodales nisl, ac porttitor nisl </p></Col>
-                    <Col xs={12} md={6} className={classes.Answer}><p>D &nbsp;&nbsp;Nulla id egestas justo, ac maximus nunc. </p></Col>
+                    <Col xs={12} md={6} className={classes.Answer}><p>C &nbsp;&nbsp;{this.props.question['C']}</p></Col>
+                    <Col xs={12} md={6} className={classes.Answer}><p>D &nbsp;&nbsp;{this.props.question['D']} </p></Col>
                 </Row>
             </Container>
         );

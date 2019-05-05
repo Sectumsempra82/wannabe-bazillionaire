@@ -1,0 +1,44 @@
+ToDo -
+
+- Init state : {
+    lvl: 1,
+    levels: {
+        1: '500€',
+        2: '1.000€',
+        3: '1.500€',
+        4: '2.000€',
+        5: '3.000€',
+        6: '5.000€',
+        7: '7.000€',
+        8: '10.000€',
+        9: '15.000€',
+        10: '20.000€',
+        11: '30.000€',
+        12: '70.000€',
+        13: '150.000€',
+        14: '300.000€',
+        15: '1 Million',
+    },
+    lifelines{ 
+        phonecall: true,
+        5050: true,
+        askPublic: true
+    },
+    
+    QuestionList: random(15).from.AllQuestions,
+    currentQuestion: QuestionList[lvl - 1].question,
+    currentAnswer: QuestionList[lvl - 1].answer,
+    possibleAnswers: QuestionList[lvl - 1].answers,
+}
+
+AllQuestions: import from src/assets/questionList.json,
+
+functions: {
+    setInitialState()
+    evalAnswer()
+    goNextLevel()
+    usePhonecall()
+    use5050()
+    askPublic()
+    victory()
+}

@@ -1,8 +1,10 @@
 .App {
   text-align: center;
-  background-color: cyan;
+  /* background-color: cyan; */
+  background-repeat: no-repeat;
+  background-size: auto 100%; 
+  background-position: center; 
   display: block;
   width: 100vw;
-
 }
 
