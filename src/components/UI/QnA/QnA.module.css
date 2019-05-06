@@ -28,6 +28,32 @@
     margin-bottom: 1vh;
 } 
 
+@keyframes correct-answer {
+    0%   { background-color: #00ff00; }
+    49% { background-color: #00ff00; }
+    50% { background-color: rgba(255, 255, 255, 0.4); }
+    99% { background-color: rgba(255, 255, 255, 0.4); }
+    100% { background-color: #00ff00; }
+}
+
+@keyframes wrong-answer {
+    0%   { background-color: #ff0000; }
+    49% { background-color: #ff0000; }
+    50% { background-color: rgba(255, 255, 255, 0.4); }
+    99% { background-color: rgba(255, 255, 255, 0.4); }
+    100% { background-color: #ff0000; }
+}
+
+
+.Correct {
+    animation: correct-answer 0.5s infinite;
+}
+.Wrong {
+    animation: wrong-answer 0.5s infinite;
+}
+
+
+
 @media (min-width: 501px) {
     .Question > p{
         font-size: 2vh;

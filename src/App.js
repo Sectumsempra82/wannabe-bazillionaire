@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import classes from './App.module.css';
 import Top from './components/UI/Top/Top';
 import QnA from './components/UI/QnA/QnA';
+import Modal from './components/UI/Modal/Modal';
 import bgLarge from './assets/img/bg-large.jpg';
 import bgSmall from './assets/img/bg-small.jpg';
 import bgXs from './assets/img/bg-xs.jpg';
@@ -11,9 +12,25 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-
-
-
+  
+    let startContent = (
+      <>
+        <h1> Press Start</h1>
+        <button onClick={this.startGame}> START </button>
+      </>
+    );
+    let loseContent = (
+      <>
+        <h1> Too bad, you lost</h1>
+        <button onClick={this.startGame}> RESTART </button>
+      </>
+    );
+    let winContent = (
+      <>
+        <h1> Yee! You are now rich! Play again?</h1>
+        <button onClick={this.startGame}> RESTART </button>
+      </>
+    );
     this.state = {
       lvl: 1,
       levels: {
@@ -39,40 +56,65 @@ class App extends Component {
         askPublic: true
       },
       questionList: {},
-      currentQuestion: ''
+      currentQuestion: {
+        A: '',
+        B: '',
+        C: '',
+        D: '',
+        answer: '',
+        question: ''
+      },
+      currentAnswer: null,
+      modal: true,
+      modalContent: startContent
     }
-
-
   }
 
   shuffleQuestions = () => {
     let nrOfExistingQuestions = Object.keys(allQuestions).length;
-    console.log(nrOfExistingQuestions);
     let selectedQuestions = Array(0);
-    for (let i=1; i<=15; i++) {
-      let mynum = Math.round(Math.random() * nrOfExistingQuestions);
-      console.log(mynum);
-      if (selectedQuestions.includes(mynum)) {
-        while (selectedQuestions.includes(mynum)) {
-          mynum = Math.round(Math.random() * nrOfExistingQuestions);
-          console.log(mynum);
+    for (let i = 1; i <= 15; i++) {
+      let rndint = Math.round(Math.random() * nrOfExistingQuestions);
+      if (selectedQuestions.includes(rndint)) {
+        while (selectedQuestions.includes(rndint)) {
+          rndint = Math.round(Math.random() * nrOfExistingQuestions);
+          console.log(rndint);
         }
       };
-      selectedQuestions.push(mynum);
+      selectedQuestions.push(rndint);
     }
-    console.log(selectedQuestions);
     let newQuestions = selectedQuestions.map((el) => allQuestions[el]);
+    return newQuestions;
+  }
 
+  startGame = () => {
+    let newQuestions = this.shuffleQuestions();
     this.setState({
       questionList: newQuestions,
-      currentQuestion: newQuestions[this.state.lvl - 1]
+      currentQuestion: newQuestions[0],
+      lifelines: {
+        phonecall: true,
+        5050: true,
+        askPublic: true
+      },
+      lvl: 1
+    });
+    this.closeModal();
+  }
+
+  handleAnswer = (ans) => {
+    let cA = (ans === this.state.currentQuestion.answer);
+    this.setState({
+      currentAnswer: cA
+    });
+  }
+
+  closeModal = () => {
+    this.setState({
+        modal: false,
+        modalContent: (<p></p>)
     })
-  }
-
-
-  componentDidMount() {
-    this.shuffleQuestions();
-  }
+}
 
   render() {
 
@@ -87,8 +129,11 @@ class App extends Component {
 
     return (
       <div style={{ backgroundImage: `url(${bgimg})` }} className={classes.App} >
-        <Top level={this.state.lvl}></Top>
-        <QnA question={this.state.currentQuestion}></QnA>
+        <Modal show={this.state.modal} modalClosed={this.closeModal}>
+          {this.state.modalContent}
+        </Modal>
+        <Top level={this.state.lvl} levels={this.state.levels}></Top>
+        <QnA question={this.state.currentQuestion} answer={this.handleAnswer} correct={this.state.currentAnswer}></QnA>
       </div>
     );
   }
