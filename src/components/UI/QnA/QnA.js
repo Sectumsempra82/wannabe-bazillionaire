@@ -24,8 +24,9 @@ class QnA extends Component {
                 this.setState({
                     answer: null
                 });
+                this.props.answer(ans);
             }, 3000);
-            this.props.answer(ans);
+            
         }
     }
 

@@ -10,7 +10,7 @@ class Top extends Component {
             .map((el, i) => {
                 if (this.props.level > 1 && (i + 1) < this.props.level) {
                     return (<p style={{ backgroundColor: '#00ff00' }}>Level {i + 1} - {this.props.levels[i + 1]}</p>)
-                } else if (this.props.level < 15 && (i + 1) === this.props.level) {
+                } else if (this.props.level <= 15 && (i + 1) === this.props.level) {
                     return (<p style={{ backgroundColor: 'rgb(138, 186, 248)', border: '5px solid black' }}>Level {i + 1} - {this.props.levels[i + 1]}</p>)
                 } else {
                     return (<p style={{ backgroundColor: 'rgb(138, 186, 248)' }}>Level {i + 1} - {this.props.levels[i + 1]}</p>)

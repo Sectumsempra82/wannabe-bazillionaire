@@ -13,19 +13,19 @@ class App extends Component {
   constructor(props) {
     super(props);
   
-    let startContent = (
+    let startModal = (
       <>
         <h1> Press Start</h1>
         <button onClick={this.startGame}> START </button>
       </>
     );
-    let loseContent = (
+    let loseModal = (
       <>
         <h1> Too bad, you lost</h1>
         <button onClick={this.startGame}> RESTART </button>
       </>
     );
-    let winContent = (
+    let winModal = (
       <>
         <h1> Yee! You are now rich! Play again?</h1>
         <button onClick={this.startGame}> RESTART </button>
@@ -66,7 +66,10 @@ class App extends Component {
       },
       currentAnswer: null,
       modal: true,
-      modalContent: startContent
+      start: startModal,
+      lose: loseModal,
+      win: winModal,
+      modalContent: startModal
     }
   }
 
@@ -103,10 +106,25 @@ class App extends Component {
   }
 
   handleAnswer = (ans) => {
-    let cA = (ans === this.state.currentQuestion.answer);
-    this.setState({
-      currentAnswer: cA
-    });
+    if(ans === this.state.currentQuestion.answer){
+      if (this.state.lvl < 15){
+        this.setState({
+          lvl: this.state.lvl + 1 ,
+          currentQuestion: this.state.questionList[this.state.lvl]
+        });
+      }
+      else {
+        this.setState({
+          modalContent: this.state.win,
+          modal: true
+        })
+      }
+    }else {
+      this.setState({
+        modalContent: this.state.lose,
+        modal: true
+      })
+    }
   }
 
   closeModal = () => {
