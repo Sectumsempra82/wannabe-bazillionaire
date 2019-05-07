@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "49402e8a697f445b85b51e2a7c1a58c0",
+    "revision": "b63ab4fcd28afe10db7d178efb08b6b5",
     "url": "/wannabe-bazillionaire/index.html"
   },
   {
-    "revision": "84e13f80749fa0eadc99",
+    "revision": "d6a0f9720a60c1b34dae",
     "url": "/wannabe-bazillionaire/static/css/main.c626b463.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/wannabe-bazillionaire/static/js/2.c4aa1ba2.chunk.js"
   },
   {
-    "revision": "84e13f80749fa0eadc99",
-    "url": "/wannabe-bazillionaire/static/js/main.5f0dd7c1.chunk.js"
+    "revision": "d6a0f9720a60c1b34dae",
+    "url": "/wannabe-bazillionaire/static/js/main.9f740485.chunk.js"
   },
   {
     "revision": "cfb8c8061f8f391dd965",
@@ -32,7 +32,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/wannabe-bazillionaire/static/media/bg-xs.5f11feeb.jpg"
   },
   {
-    "revision": "06cb133dd52198332e539fdaf3fbd0fd",
-    "url": "/wannabe-bazillionaire/static/media/logo.06cb133d.png"
+    "revision": "f43a339ca2176fea2735e15099bf69d8",
+    "url": "/wannabe-bazillionaire/static/media/logo.f43a339c.png"
   }
 ]);
