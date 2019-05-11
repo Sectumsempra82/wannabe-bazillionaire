@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b63ab4fcd28afe10db7d178efb08b6b5",
+    "revision": "8f0aa32e7fb0d967faa4d37eb00fcd76",
     "url": "/wannabe-bazillionaire/index.html"
   },
   {
-    "revision": "d6a0f9720a60c1b34dae",
-    "url": "/wannabe-bazillionaire/static/css/main.c626b463.chunk.css"
+    "revision": "93ceaf48d81ef466e3a8",
+    "url": "/wannabe-bazillionaire/static/css/main.51fdb562.chunk.css"
   },
   {
     "revision": "4c498a12ab1d025b908b",
     "url": "/wannabe-bazillionaire/static/js/2.c4aa1ba2.chunk.js"
   },
   {
-    "revision": "d6a0f9720a60c1b34dae",
-    "url": "/wannabe-bazillionaire/static/js/main.9f740485.chunk.js"
+    "revision": "93ceaf48d81ef466e3a8",
+    "url": "/wannabe-bazillionaire/static/js/main.4a057555.chunk.js"
   },
   {
     "revision": "cfb8c8061f8f391dd965",
