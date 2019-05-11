@@ -55,24 +55,26 @@ class QnA extends Component {
 
 
         return (
-            <Container className={classes.QnA}>
-
-                <Row>
-                    <Col>
-                        <div className={classes.Question}>
-                            <p>{this.props.question.question}</p>
-                        </div>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col xs={12} md={6} className={classA} onClick={() => this.handleAnswer('A')}><p>A &nbsp;&nbsp;{this.props.question['A']}</p></Col>
-                    <Col xs={12} md={6} className={classB} onClick={() => this.handleAnswer('B')}><p>B &nbsp;&nbsp;{this.props.question['B']}</p></Col>
-                </Row>
-                <Row>
-                    <Col xs={12} md={6} className={classC} onClick={() => this.handleAnswer('C')}><p>C &nbsp;&nbsp;{this.props.question['C']}</p></Col>
-                    <Col xs={12} md={6} className={classD} onClick={() => this.handleAnswer('D')}><p>D &nbsp;&nbsp;{this.props.question['D']} </p></Col>
-                </Row>
-            </Container>
+            <div className={classes.QnA}>
+                <Container>
+    
+                    <Row>
+                        <Col>
+                            <div className={classes.Question}>
+                                <p>{this.props.question.question}</p>
+                            </div>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col xs={12} md={6} className={classA} onClick={() => this.handleAnswer('A')}><p>A &nbsp;&nbsp;{this.props.question['A']}</p></Col>
+                        <Col xs={12} md={6} className={classB} onClick={() => this.handleAnswer('B')}><p>B &nbsp;&nbsp;{this.props.question['B']}</p></Col>
+                    </Row>
+                    <Row>
+                        <Col xs={12} md={6} className={classC} onClick={() => this.handleAnswer('C')}><p>C &nbsp;&nbsp;{this.props.question['C']}</p></Col>
+                        <Col xs={12} md={6} className={classD} onClick={() => this.handleAnswer('D')}><p>D &nbsp;&nbsp;{this.props.question['D']} </p></Col>
+                    </Row>
+                </Container>
+            </div>
         );
     }
 }

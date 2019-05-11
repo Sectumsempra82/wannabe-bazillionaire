@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import classes from './App.module.css';
-import Top from './components/UI/Top/Top';
-import QnA from './components/UI/QnA/QnA';
-import Modal from './components/UI/Modal/Modal';
+import Top from './components/Top/Top';
+import QnA from './components/QnA/QnA';
+import Modal from './components/Modal/Modal';
 import bgLarge from './assets/img/bg-large.jpg';
 import bgSmall from './assets/img/bg-small.jpg';
 import bgXs from './assets/img/bg-xs.jpg';

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import classes from './Top.module.css';
-import logo from '../../../assets/img/logo.png';
+import logo from '../../assets/img/logo.png';
 
 class Top extends Component {
     render() {
