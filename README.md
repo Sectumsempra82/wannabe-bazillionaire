@@ -3,12 +3,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ToDo List:
 
-- [ ] implement lifelines
+- [x] implement lifelines
 
-- [ ] functions to be implemented:
-    - [ ] usePhonecall()
-    - [ ] use5050()
-    - [ ] askPublic()
+- [x] functions to be implemented:
+    - [x] usePhonecall()
+    - [x] use5050()
+    - [x] askPublic()
 
 
 - [ ] fixResponsiveness
