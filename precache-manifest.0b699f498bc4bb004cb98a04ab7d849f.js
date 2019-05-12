@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8f0aa32e7fb0d967faa4d37eb00fcd76",
+    "revision": "cce42048670f15deee190a46173f5e1a",
     "url": "/wannabe-bazillionaire/index.html"
   },
   {
-    "revision": "93ceaf48d81ef466e3a8",
-    "url": "/wannabe-bazillionaire/static/css/main.51fdb562.chunk.css"
+    "revision": "16584ad73d76ce299cea",
+    "url": "/wannabe-bazillionaire/static/css/main.dc2610f1.chunk.css"
   },
   {
-    "revision": "4c498a12ab1d025b908b",
-    "url": "/wannabe-bazillionaire/static/js/2.c4aa1ba2.chunk.js"
+    "revision": "8c444796d2b20e52fdea",
+    "url": "/wannabe-bazillionaire/static/js/2.1090e0cc.chunk.js"
   },
   {
-    "revision": "93ceaf48d81ef466e3a8",
-    "url": "/wannabe-bazillionaire/static/js/main.4a057555.chunk.js"
+    "revision": "16584ad73d76ce299cea",
+    "url": "/wannabe-bazillionaire/static/js/main.050baae1.chunk.js"
   },
   {
     "revision": "cfb8c8061f8f391dd965",
