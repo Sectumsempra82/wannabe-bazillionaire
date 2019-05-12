@@ -1,11 +1,13 @@
-ToDo -
+ToDo:
 
-functions to be implemented {
-    usePhonecall()
-    use5050()
-    askPublic()
-}
+- [ ] implement lifelines
 
--fixResponsiveness
--images to sprites
--fix url preview on different platforms
+- [ ] functions to be implemented:
+    - [ ] usePhonecall()
+    - [ ] use5050()
+    - [ ] askPublic()
+
+
+- [ ] fixResponsiveness
+- [ ] images to sprites
+- [ ] fix url preview on different platforms
