@@ -1,13 +1,5 @@
 ToDo:
 
-- [ ] implement lifelines
-
-- [ ] functions to be implemented:
-    - [ ] usePhonecall()
-    - [ ] use5050()
-    - [ ] askPublic()
-
-
 - [ ] fixResponsiveness
 - [ ] images to sprites
 - [ ] fix url preview on different platforms
