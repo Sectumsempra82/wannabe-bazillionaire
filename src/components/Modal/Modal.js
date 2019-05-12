@@ -12,14 +12,14 @@ class Modal extends Component {
     render() {
         return (
             <>
-                <Backdrop show={this.props.show} clicked={() => {}} />
+                <Backdrop show={this.props.show} />
                 <div
                     className={classes.Modal}
                     style={{
                         transform: this.props.show ? 'translateY(0)  translate(-50%, -50%)' : 'translateY(-100vh)',
                         opacity: this.props.show ? '1' : '0'
                     }}
-                    ref={ref => (this.span = ref)}>
+                    >
                     {this.props.children}
                 </div>
             </>

@@ -51,3 +51,16 @@
         line-height: 2vh;
     }
 }
+
+.CurrentLevel{
+    background-color: rgb(138, 186, 248);
+    border: 5px solid black;
+}
+
+.PassedLevel{
+    background-color: #00ff00;
+}
+
+.notPassedLevel{
+ background-color: rgb(138, 186, 248);
+}

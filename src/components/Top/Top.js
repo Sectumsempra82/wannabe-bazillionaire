@@ -11,9 +11,9 @@ class Top extends Component {
                 if (this.props.level > 1 && (i + 1) < this.props.level) {
                     return (<p style={{ backgroundColor: '#00ff00' }} key={i}>Level {i + 1} - {this.props.levels[i + 1]}</p>)
                 } else if (this.props.level <= 15 && (i + 1) === this.props.level) {
-                    return (<p style={{ backgroundColor: 'rgb(138, 186, 248)', border: '5px solid black' }} key={i}>Level {i + 1} - {this.props.levels[i + 1]}</p>)
+                    return (<p className={classes.CurrentLevel} key={i}>Level {i + 1} - {this.props.levels[i + 1]}</p>)
                 } else {
-                    return (<p style={{ backgroundColor: 'rgb(138, 186, 248)' }} key={i}>Level {i + 1} - {this.props.levels[i + 1]}</p>)
+                    return (<p className={classes.notPassedLevel} key={i}>Level {i + 1} - {this.props.levels[i + 1]}</p>)
                 }
             })
             .reverse()

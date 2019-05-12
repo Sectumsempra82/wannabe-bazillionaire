@@ -7,30 +7,32 @@ import bgLarge from './assets/img/bg-large.jpg';
 import bgSmall from './assets/img/bg-small.jpg';
 import bgXs from './assets/img/bg-xs.jpg';
 import allQuestions from "./assets/questions/questionList.json";
+import {StartModal, LoseModal, WinModal} from './components/Modal/ModalStates';
+
 
 class App extends Component {
 
   constructor(props) {
     super(props);
   
-    let startModal = (
-      <>
-        <h1> Press Start</h1>
-        <button onClick={this.startGame}> START </button>
-      </>
-    );
-    let loseModal = (
-      <>
-        <h1> Too bad, you lost</h1>
-        <button onClick={this.startGame}> RESTART </button>
-      </>
-    );
-    let winModal = (
-      <>
-        <h1> Yee! You are now rich! Play again?</h1>
-        <button onClick={this.startGame}> RESTART </button>
-      </>
-    );
+    // let startModal = (
+    //   <>
+    //     <h1> Press Start</h1>
+    //     <button onClick={this.startGame}> START </button>
+    //   </>
+    // );
+    // let loseModal = (
+    //   <>
+    //     <h1> Too bad, you lost</h1>
+    //     <button onClick={this.startGame}> RESTART </button>
+    //   </>
+    // );
+    // let winModal = (
+    //   <>
+    //     <h1> Yee! You are now rich! Play again?</h1>
+    //     <button onClick={this.startGame}> RESTART </button>
+    //   </>
+    // );
     this.state = {
       lvl: 1,
       levels: {
@@ -66,10 +68,10 @@ class App extends Component {
       },
       currentAnswer: null,
       modal: true,
-      start: startModal,
-      lose: loseModal,
-      win: winModal,
-      modalContent: startModal
+      // start: startModal,
+      // lose: loseModal,
+      // win: winModal,
+      modalContent: <StartModal startGame={this.startGame}/>
     }
   }
 
@@ -115,13 +117,13 @@ class App extends Component {
       }
       else {
         this.setState({
-          modalContent: this.state.win,
+          modalContent: <WinModal startGame={this.startGame}/>,
           modal: true
         })
       }
     }else {
       this.setState({
-        modalContent: this.state.lose,
+        modalContent: <LoseModal startGame={this.startGame}/>,
         modal: true
       })
     }
