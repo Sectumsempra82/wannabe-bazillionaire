@@ -1,19 +1,25 @@
 {
   "files": {
-    "main.css": "/wannabe-bazillionaire/static/css/main.dc2610f1.chunk.css",
-    "main.js": "/wannabe-bazillionaire/static/js/main.050baae1.chunk.js",
-    "main.js.map": "/wannabe-bazillionaire/static/js/main.050baae1.chunk.js.map",
+    "main.css": "/wannabe-bazillionaire/static/css/main.2149c06b.chunk.css",
+    "main.js": "/wannabe-bazillionaire/static/js/main.55e718e2.chunk.js",
+    "main.js.map": "/wannabe-bazillionaire/static/js/main.55e718e2.chunk.js.map",
     "runtime~main.js": "/wannabe-bazillionaire/static/js/runtime~main.a9d17174.js",
     "runtime~main.js.map": "/wannabe-bazillionaire/static/js/runtime~main.a9d17174.js.map",
-    "static/js/2.1090e0cc.chunk.js": "/wannabe-bazillionaire/static/js/2.1090e0cc.chunk.js",
-    "static/js/2.1090e0cc.chunk.js.map": "/wannabe-bazillionaire/static/js/2.1090e0cc.chunk.js.map",
+    "static/js/2.bfcf57d1.chunk.js": "/wannabe-bazillionaire/static/js/2.bfcf57d1.chunk.js",
+    "static/js/2.bfcf57d1.chunk.js.map": "/wannabe-bazillionaire/static/js/2.bfcf57d1.chunk.js.map",
     "index.html": "/wannabe-bazillionaire/index.html",
-    "precache-manifest.0b699f498bc4bb004cb98a04ab7d849f.js": "/wannabe-bazillionaire/precache-manifest.0b699f498bc4bb004cb98a04ab7d849f.js",
+    "precache-manifest.31f620eac13d6e9eac2250aeaed0d562.js": "/wannabe-bazillionaire/precache-manifest.31f620eac13d6e9eac2250aeaed0d562.js",
     "service-worker.js": "/wannabe-bazillionaire/service-worker.js",
-    "static/css/main.dc2610f1.chunk.css.map": "/wannabe-bazillionaire/static/css/main.dc2610f1.chunk.css.map",
+    "static/css/main.2149c06b.chunk.css.map": "/wannabe-bazillionaire/static/css/main.2149c06b.chunk.css.map",
+    "static/media/5050.png": "/wannabe-bazillionaire/static/media/5050.95297ac2.png",
+    "static/media/5050No.png": "/wannabe-bazillionaire/static/media/5050No.3c52f6c1.png",
+    "static/media/askPublic.png": "/wannabe-bazillionaire/static/media/askPublic.565c7d8e.png",
+    "static/media/askPublicNo.png": "/wannabe-bazillionaire/static/media/askPublicNo.f6f3a74a.png",
     "static/media/bg-large.jpg": "/wannabe-bazillionaire/static/media/bg-large.4c1df529.jpg",
     "static/media/bg-small.jpg": "/wannabe-bazillionaire/static/media/bg-small.bcd9ae6b.jpg",
     "static/media/bg-xs.jpg": "/wannabe-bazillionaire/static/media/bg-xs.5f11feeb.jpg",
-    "static/media/logo.png": "/wannabe-bazillionaire/static/media/logo.f43a339c.png"
+    "static/media/logo.png": "/wannabe-bazillionaire/static/media/logo.f43a339c.png",
+    "static/media/phoneCall.png": "/wannabe-bazillionaire/static/media/phoneCall.1d6d3601.png",
+    "static/media/phoneCallNo.png": "/wannabe-bazillionaire/static/media/phoneCallNo.c6ecfd38.png"
   }
 }
