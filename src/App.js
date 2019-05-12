@@ -3,6 +3,7 @@ import classes from './App.module.css';
 import Top from './components/Top/Top';
 import QnA from './components/QnA/QnA';
 import Modal from './components/Modal/Modal';
+import Lifelines from './components/Lifelines/Lifelines';
 import bgLarge from './assets/img/bg-large.jpg';
 import bgSmall from './assets/img/bg-small.jpg';
 import bgXs from './assets/img/bg-xs.jpg';
@@ -14,25 +15,6 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-  
-    // let startModal = (
-    //   <>
-    //     <h1> Press Start</h1>
-    //     <button onClick={this.startGame}> START </button>
-    //   </>
-    // );
-    // let loseModal = (
-    //   <>
-    //     <h1> Too bad, you lost</h1>
-    //     <button onClick={this.startGame}> RESTART </button>
-    //   </>
-    // );
-    // let winModal = (
-    //   <>
-    //     <h1> Yee! You are now rich! Play again?</h1>
-    //     <button onClick={this.startGame}> RESTART </button>
-    //   </>
-    // );
     this.state = {
       lvl: 1,
       levels: {
@@ -53,8 +35,8 @@ class App extends Component {
         15: '1 Million',
       },
       lifelines: {
-        phonecall: true,
-        5050: true,
+        phoneCall: true,
+        fiftyfifty: true,
         askPublic: true
       },
       questionList: {},
@@ -67,10 +49,9 @@ class App extends Component {
         question: ''
       },
       currentAnswer: null,
+      disabledAnswers: [],
+      suggestedAnswer: '',
       modal: true,
-      // start: startModal,
-      // lose: loseModal,
-      // win: winModal,
       modalContent: <StartModal startGame={this.startGame}/>
     }
   }
@@ -98,11 +79,14 @@ class App extends Component {
       questionList: newQuestions,
       currentQuestion: newQuestions[0],
       lifelines: {
-        phonecall: true,
-        5050: true,
+        phoneCall: true,
+        fiftyfifty: true,
         askPublic: true
       },
-      lvl: 1
+      lvl: 1,
+      suggestedAnswer: '',
+      disabledAnswers: [],
+      currentAnswer: null
     });
     this.closeModal();
   }
@@ -112,19 +96,25 @@ class App extends Component {
       if (this.state.lvl < 15){
         this.setState({
           lvl: this.state.lvl + 1 ,
-          currentQuestion: this.state.questionList[this.state.lvl]
+          currentQuestion: this.state.questionList[this.state.lvl],
+          disabledAnswers: [],
+          suggestedAnswer: ''
         });
       }
       else {
         this.setState({
           modalContent: <WinModal startGame={this.startGame}/>,
-          modal: true
+          modal: true,
+          suggestedAnswer: '',
+          disabledAnswers: []
         })
       }
     }else {
       this.setState({
         modalContent: <LoseModal startGame={this.startGame}/>,
-        modal: true
+        modal: true,
+        suggestedAnswer: '',
+        disabledAnswers: []
       })
     }
   }
@@ -134,7 +124,53 @@ class App extends Component {
         modal: false,
         modalContent: (<p></p>)
     })
-}
+  }
+  useHelp = (help) => {
+    switch (help){
+      case 'Fiftyfifty':
+        let da = [
+          'A',
+          'B',
+          'C',
+          'D'
+        ]
+        .filter(el => {
+          return this.state.currentQuestion.answer !== el;
+        })
+        .slice(0,2);
+        this.setState({
+          lifelines: {
+            ...this.state.lifelines,
+            fiftyfifty: false
+          },
+          disabledAnswers: da
+        })
+        break;
+      
+      case 'PhoneCall':
+        this.setState({
+          lifelines: {
+            ...this.state.lifelines,
+            phoneCall: false,
+          },
+          suggestedAnswer: this.state.currentQuestion.answer
+        });
+        break;
+      
+      case 'AskPublic':
+        this.setState({
+          lifelines: {
+            ...this.state.lifelines,
+            askPublic: false
+          },
+          suggestedAnswer: this.state.currentQuestion.answer
+        });
+        break;
+      
+      default:
+        break;
+      }
+  }
 
   render() {
 
@@ -148,12 +184,24 @@ class App extends Component {
     }
 
     return (
-      <div style={{ backgroundImage: `url(${bgimg})` }} className={classes.App} >
-        <Modal show={this.state.modal} modalClosed={this.closeModal}>
-          {this.state.modalContent}
-        </Modal>
-        <Top level={this.state.lvl} levels={this.state.levels}></Top>
-        <QnA question={this.state.currentQuestion} answer={this.handleAnswer} correct={this.state.currentAnswer}></QnA>
+      <div style={{ backgroundImage: `url(${bgimg})` }}
+        className={classes.App} >
+          <Modal show={this.state.modal}
+            modalClosed={this.closeModal}>
+              {this.state.modalContent}
+          </Modal>
+          <Top level={this.state.lvl}
+             levels={this.state.levels}>
+          </Top>
+          <Lifelines lifelines={this.state.lifelines}
+            useHelp={this.useHelp}>
+          </Lifelines>
+          <QnA question={this.state.currentQuestion}
+             answer={this.handleAnswer}
+             correct={this.state.currentAnswer}
+             disabled={this.state.disabledAnswers}
+             suggested={this.state.suggestedAnswer}>
+          </QnA>
       </div>
     );
   }

@@ -35,22 +35,30 @@ class QnA extends Component {
         let classA = cx({
             Answer: true,
             Correct: ((this.state.answer === 'A') && (this.state.answer === this.props.question.answer)),
-            Wrong: ((this.state.answer === 'A') && (this.state.answer !== this.props.question.answer))
+            Wrong: ((this.state.answer === 'A') && (this.state.answer !== this.props.question.answer)),
+            Disabled: this.props.disabled.includes('A'),
+            Suggested: this.props.suggested === 'A'
         })
         let classB = cx({
             Answer: true,
             Correct: ((this.state.answer === 'B') && (this.state.answer === this.props.question.answer)),
-            Wrong: ((this.state.answer === 'B') && (this.state.answer !== this.props.question.answer))
+            Wrong: ((this.state.answer === 'B') && (this.state.answer !== this.props.question.answer)),
+            Disabled: this.props.disabled.includes('B'),
+            Suggested: this.props.suggested === 'B'
         })
         let classC = cx({
             Answer: true,
             Correct: ((this.state.answer === 'C') && (this.state.answer === this.props.question.answer)),
-            Wrong: ((this.state.answer === 'C') && (this.state.answer !== this.props.question.answer))
+            Wrong: ((this.state.answer === 'C') && (this.state.answer !== this.props.question.answer)),
+            Disabled: this.props.disabled.includes('C'),
+            Suggested: this.props.suggested === 'C'
         })
         let classD = cx({
             Answer: true,
             Correct: ((this.state.answer === 'D') && (this.state.answer === this.props.question.answer)),
-            Wrong: ((this.state.answer === 'D') && (this.state.answer !== this.props.question.answer))
+            Wrong: ((this.state.answer === 'D') && (this.state.answer !== this.props.question.answer)),
+            Disabled: this.props.disabled.includes('D'),
+            Suggested: this.props.suggested === 'D'
         })
 
 
@@ -66,12 +74,12 @@ class QnA extends Component {
                         </Col>
                     </Row>
                     <Row>
-                        <Col xs={12} md={6} className={classA} onClick={() => this.handleAnswer('A')}><p>A &nbsp;&nbsp;{this.props.question['A']}</p></Col>
-                        <Col xs={12} md={6} className={classB} onClick={() => this.handleAnswer('B')}><p>B &nbsp;&nbsp;{this.props.question['B']}</p></Col>
+                        <Col xs={12} md={6} className={classA} onClick={!this.props.disabled.includes('A') ? () => this.handleAnswer('A') : {}}><p>A &nbsp;&nbsp;{this.props.question['A']}</p></Col>
+                        <Col xs={12} md={6} className={classB} onClick={!this.props.disabled.includes('B') ? () => this.handleAnswer('B') : {}}><p>B &nbsp;&nbsp;{this.props.question['B']}</p></Col>
                     </Row>
                     <Row>
-                        <Col xs={12} md={6} className={classC} onClick={() => this.handleAnswer('C')}><p>C &nbsp;&nbsp;{this.props.question['C']}</p></Col>
-                        <Col xs={12} md={6} className={classD} onClick={() => this.handleAnswer('D')}><p>D &nbsp;&nbsp;{this.props.question['D']} </p></Col>
+                        <Col xs={12} md={6} className={classC} onClick={!this.props.disabled.includes('C') ? () => this.handleAnswer('C') : {}}><p>C &nbsp;&nbsp;{this.props.question['C']}</p></Col>
+                        <Col xs={12} md={6} className={classD} onClick={!this.props.disabled.includes('D') ? () => this.handleAnswer('D') : {}}><p>D &nbsp;&nbsp;{this.props.question['D']} </p></Col>
                     </Row>
                 </Container>
             </div>

@@ -45,11 +45,20 @@
 }
 
 
+
 .Correct {
     animation: correct-answer 0.5s infinite;
 }
 .Wrong {
     animation: wrong-answer 0.5s infinite;
+}
+
+.Disabled {
+    text-decoration: line-through;
+}
+
+.Suggested {
+    border: 5px solid black;
 }
 
 
