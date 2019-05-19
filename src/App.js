@@ -99,7 +99,6 @@ class App extends Component {
       lvl: 1,
       suggestedAnswer: '',
       disabledAnswers: [],
-      currentAnswer: null
     });
     this.closeModal();
   }
@@ -218,7 +217,6 @@ class App extends Component {
           </Lifelines>
           <QnA question={this.state.currentQuestion}
              answer={this.handleAnswer}
-             correct={this.state.currentAnswer}
              disabled={this.state.disabledAnswers}
              suggested={this.state.suggestedAnswer}>
           </QnA>

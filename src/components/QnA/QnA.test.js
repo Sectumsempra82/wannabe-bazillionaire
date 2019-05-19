@@ -25,7 +25,6 @@ describe('<QnA />', () => {
         wrapper = mount(<QnA
             question={qu}
             answer={mock}
-            correct={null}
             disabled={[]}
             suggested=''
             ></QnA>)

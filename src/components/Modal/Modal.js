@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import PropTypes from 'prop-types';
 import classes from './Modal.module.css';
 import Backdrop from '../Backdrop/Backdrop';
 
@@ -26,6 +26,13 @@ class Modal extends Component {
             </>
         )
     }
+}
+
+Modal.propTypes = {
+    //boolean: used to determine if the modal should be visible
+    show: PropTypes.bool.isRequired,
+    //function: used to close the modal
+    modalClosed: PropTypes.func.isRequired
 }
 
 export default Modal;

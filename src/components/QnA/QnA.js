@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import classNames from 'classnames/bind';
 import classes from './QnA.module.css';
 import { Container, Row, Col } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
 /*Useful to dynamically set classes */
 let cx = classNames.bind(classes);
@@ -87,5 +88,16 @@ class QnA extends Component {
         );
     }
 }
+
+QnA.propTypes = {
+    //object: current question, possible answers and correct answer
+    question: PropTypes.object.isRequired,
+    //function" triggered when the user choses an answer
+    answer: PropTypes.func.isRequired,
+    //array: including the letter of the disabled answers (when 50/50 lifeline is used)
+    disabled: PropTypes.array.isRequired,
+    //string: suggested answer (when phoneHome or askPublic lifelines are used)
+    suggested: PropTypes.string.isRequired
+};
 
 export default QnA;

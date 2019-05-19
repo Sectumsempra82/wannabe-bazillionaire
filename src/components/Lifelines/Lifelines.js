@@ -7,6 +7,7 @@ import askPublic from '../../assets/img/askPublic.png';
 import phoneCallNo from '../../assets/img/phoneCallNo.png';
 import fiftyfiftyNo from '../../assets/img/5050No.png';
 import askPublicNo from '../../assets/img/askPublicNo.png';
+import PropTypes from 'prop-types';
 
 class Lifelines extends Component {
     render() { 
@@ -36,6 +37,13 @@ class Lifelines extends Component {
             </div>
         );
     }
+}
+
+Lifelines.propTypes = {
+    //boolean: used to determine the availability of the various lifelines
+    lifelines: PropTypes.object.isRequired,
+    //function: triggered when a lifeline is used
+    useHelp: PropTypes.func.isRequired
 }
 
 export default Lifelines;

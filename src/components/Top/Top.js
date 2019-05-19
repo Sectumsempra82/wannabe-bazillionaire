@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classes from './Top.module.css';
 import logo from '../../assets/img/logo.png';
+import PropTypes from 'prop-types';
 
 class Top extends Component {
     render() {
@@ -31,5 +32,12 @@ class Top extends Component {
         )
     }
 }
+
+Top.propTypes = {
+    //object: levels and relative prizes
+    levels: PropTypes.object.isRequired,
+    //string: current level
+    level: PropTypes.number.isRequired
+};
 
 export default Top;
