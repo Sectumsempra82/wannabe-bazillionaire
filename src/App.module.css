@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  /* background-color: cyan; */
   background-repeat: no-repeat;
   background-size: auto 100%; 
   background-position: center; 
@@ -12,5 +11,6 @@
 @media (min-width: 1025px){
   .App {
     background-size: 100% auto; 
+    display: table-cell;
   }
 }

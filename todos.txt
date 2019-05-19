@@ -1,5 +1,0 @@
-ToDo:
-
-- [ ] fixResponsiveness
-- [ ] images to sprites
-- [ ] fix url preview on different platforms

@@ -6,6 +6,12 @@
 .Row{ 
     display:flex
 }
-.Row img { 
-    max-width: 33%;
+.Row  img { 
+    width: 70%;
+}
+
+@media (min-width: 1024px) {
+    .Row img { 
+        max-width: 33%;
+    }
 }

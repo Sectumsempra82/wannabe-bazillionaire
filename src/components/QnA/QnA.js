@@ -74,12 +74,12 @@ class QnA extends Component {
                         </Col>
                     </Row>
                     <Row>
-                        <Col xs={12} md={6} className={classA} onClick={!this.props.disabled.includes('A') ? () => this.handleAnswer('A') : {}}><p>A &nbsp;&nbsp;{this.props.question['A']}</p></Col>
-                        <Col xs={12} md={6} className={classB} onClick={!this.props.disabled.includes('B') ? () => this.handleAnswer('B') : {}}><p>B &nbsp;&nbsp;{this.props.question['B']}</p></Col>
+                        <Col xs={12} md={6} className={classA} id='ansA' onClick={!this.props.disabled.includes('A') ? () => this.handleAnswer('A') : {}}><p>A &nbsp;&nbsp;{this.props.question['A']}</p></Col>
+                        <Col xs={12} md={6} className={classB} id='ansB' onClick={!this.props.disabled.includes('B') ? () => this.handleAnswer('B') : {}}><p>B &nbsp;&nbsp;{this.props.question['B']}</p></Col>
                     </Row>
                     <Row>
-                        <Col xs={12} md={6} className={classC} onClick={!this.props.disabled.includes('C') ? () => this.handleAnswer('C') : {}}><p>C &nbsp;&nbsp;{this.props.question['C']}</p></Col>
-                        <Col xs={12} md={6} className={classD} onClick={!this.props.disabled.includes('D') ? () => this.handleAnswer('D') : {}}><p>D &nbsp;&nbsp;{this.props.question['D']} </p></Col>
+                        <Col xs={12} md={6} className={classC} id='ansC' onClick={!this.props.disabled.includes('C') ? () => this.handleAnswer('C') : {}}><p>C &nbsp;&nbsp;{this.props.question['C']}</p></Col>
+                        <Col xs={12} md={6} className={classD} id='ansD' onClick={!this.props.disabled.includes('D') ? () => this.handleAnswer('D') : {}}><p>D &nbsp;&nbsp;{this.props.question['D']} </p></Col>
                     </Row>
                 </Container>
             </div>

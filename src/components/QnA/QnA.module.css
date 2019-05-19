@@ -1,9 +1,10 @@
 .QnA {
-    display: block;
-    width: 100%;
+    display: flex;
+    /* width: 98vw !important; */
     height: 100%;
-    /* min-height: 41vh; */
+    min-height: 35vh; 
     padding-bottom: 5vh;
+    /* margin: 0 auto !important; */
 }
 
 .Answer{

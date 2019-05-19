@@ -17,17 +17,17 @@ class Lifelines extends Component {
                     <Row className={classes.Row} >
                         <Col xs={4} md={4} 
                         className={classes.PhoneCall} 
-                        onClick={this.props.lifelines.phoneCall ? () => this.props.useHelp('PhoneCall') : {}}>
+                        onClick={this.props.lifelines.phoneCall ? () => this.props.useHelp('PhoneCall') : ()=>{}}>
                             <img src={this.props.lifelines.phoneCall ? phoneCall : phoneCallNo} alt='Phone Call' />
                         </Col>
                         <Col xs={4} md={4} 
                         className={classes.Fiftyfifty} 
-                        onClick={this.props.lifelines.fiftyfifty ? () => this.props.useHelp('Fiftyfifty') : {}}>
+                        onClick={this.props.lifelines.fiftyfifty ? () => this.props.useHelp('Fiftyfifty') : ()=>{}}>
                             <img src={this.props.lifelines.fiftyfifty ? fiftyfifty : fiftyfiftyNo} alt='5050' />
                         </Col>
                         <Col xs={4} md={4} 
                         className={classes.AskPublic} 
-                        onClick={this.props.lifelines.askPublic ? () => this.props.useHelp('AskPublic') : {}}>
+                        onClick={this.props.lifelines.askPublic ? () => this.props.useHelp('AskPublic') : ()=>{}}>
                             <img src={this.props.lifelines.askPublic ? askPublic : askPublicNo} alt='Ask the public' />
                         </Col>
                     </Row>
