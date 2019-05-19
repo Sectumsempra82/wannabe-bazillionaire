@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ToDo List:
 
 - [ ] testing -- added basic testing
-- [ ] comment the code
+- [x] comment the code
 - [ ] fix responsiveness (overflow related?) -- partially fixed
 - [ ] images to sprites
 - [ ] fix url preview on different platforms
