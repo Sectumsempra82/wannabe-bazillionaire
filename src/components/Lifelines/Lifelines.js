@@ -9,7 +9,8 @@ import fiftyfiftyNo from '../../assets/img/5050No.png';
 import askPublicNo from '../../assets/img/askPublicNo.png';
 
 class Lifelines extends Component {
-    render() {
+    render() { 
+        /*Simply rendering the lifelines in a single bar */
         return (
             <div className={classes.Lifelines}>
                 <Container>

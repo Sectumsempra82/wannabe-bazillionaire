@@ -16,6 +16,7 @@ class Modal extends Component {
                 <div
                     className={classes.Modal}
                     style={{
+                        /*Cool animation to keep the content centered on any device */
                         transform: this.props.show ? 'translateY(0)  translate(-50%, -50%)' : 'translateY(-100vh)',
                         opacity: this.props.show ? '1' : '0'
                     }}

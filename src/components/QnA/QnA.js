@@ -3,17 +3,18 @@ import classNames from 'classnames/bind';
 import classes from './QnA.module.css';
 import { Container, Row, Col } from 'react-bootstrap';
 
+/*Useful to dynamically set classes */
 let cx = classNames.bind(classes);
 
 class QnA extends Component {
-
+    /*State management was necessary for this component */
     constructor(props) {
         super(props);
         this.state = {
             answer: null
         }
     }
-
+    /*handleAnswer: triggers a reaction to the answer given by the user in both this component and the parent component*/
     handleAnswer = (ans) => {
 
         if (this.state.answer === null) {
@@ -29,7 +30,7 @@ class QnA extends Component {
             
         }
     }
-
+    /*Setting the dynamic classes*/
     render() {
 
         let classA = cx({
@@ -61,7 +62,7 @@ class QnA extends Component {
             Suggested: this.props.suggested === 'D'
         })
 
-
+        /*Rendering the current question and answers */
         return (
             <div className={classes.QnA}>
                 <Container>

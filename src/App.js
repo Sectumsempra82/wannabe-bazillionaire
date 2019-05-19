@@ -12,11 +12,12 @@ import {StartModal, LoseModal, WinModal} from './components/Modal/ModalStates';
 
 
 class App extends Component {
-
+/*  Setting initial state */
   constructor(props) {
     super(props);
     this.state = {
       lvl: 1,
+      /* can this be done better? */
       levels: {
         1: '500€',
         2: '1.000€',
@@ -34,12 +35,18 @@ class App extends Component {
         14: '300.000€',
         15: '1 Million',
       },
+
       lifelines: {
         phoneCall: true,
         fiftyfifty: true,
         askPublic: true
       },
+      
+      /*Setting empty initial question and answers so the users cannot just refresh and cycle all the questions, 
+      this doesn't solve the issue but at least adds some difficulty and makes the initial view cleaner */
+
       questionList: {},
+
       currentQuestion: {
         A: '',
         B: '',
@@ -48,13 +55,17 @@ class App extends Component {
         answer: '',
         question: ''
       },
+
       currentAnswer: null,
       disabledAnswers: [],
       suggestedAnswer: '',
       modal: true,
+      /* Setting the initial modal */
       modalContent: <StartModal startGame={this.startGame}/>
     }
   }
+
+  /*shuffleQuestions: utility to random chose the 15 DIFFERENT (that is why the function is so long) questions to be used for this match among the 1000 possibilities  */
 
   shuffleQuestions = () => {
     let nrOfExistingQuestions = Object.keys(allQuestions).length;
@@ -72,6 +83,8 @@ class App extends Component {
     let newQuestions = selectedQuestions.map((el) => allQuestions[el]);
     return newQuestions;
   }
+
+  /*startGame: function to start or restart the game, removes the modal and sets the 15 questions for the match */
 
   startGame = () => {
     let newQuestions = this.shuffleQuestions();
@@ -91,8 +104,12 @@ class App extends Component {
     this.closeModal();
   }
 
+  /*handleAnswer: function directly passed to the various answer divs, used to set the next state based on the answer given*/
+
   handleAnswer = (ans) => {
+    /* If the user has answered correctly */
     if(ans === this.state.currentQuestion.answer){
+      /* If that wasn't the last question go to the next level*/
       if (this.state.lvl < 15){
         this.setState({
           lvl: this.state.lvl + 1 ,
@@ -101,6 +118,7 @@ class App extends Component {
           suggestedAnswer: ''
         });
       }
+      /*Otherwise the user has won */
       else {
         this.setState({
           modalContent: <WinModal startGame={this.startGame}/>,
@@ -109,7 +127,8 @@ class App extends Component {
           disabledAnswers: []
         })
       }
-    }else {
+    }/* If the user hasn't answered correctly restart the game */
+    else {
       this.setState({
         modalContent: <LoseModal startGame={this.startGame}/>,
         modal: true,
@@ -125,6 +144,7 @@ class App extends Component {
         modalContent: (<p></p>)
     })
   }
+  /*Give a suggestion or disable two wrong answers based on which lifeline has been used*/
   useHelp = (help) => {
     switch (help){
       case 'Fiftyfifty':
@@ -173,7 +193,7 @@ class App extends Component {
   }
 
   render() {
-
+    /* Sets the background size dynamically in order to reduce loading time, higher resolution image might be needed for the extraSmall preset */
     let bgimg = bgXs;
     if (window.innerWidth >= 1000) {
       bgimg = bgLarge;
@@ -182,7 +202,7 @@ class App extends Component {
         bgimg = bgSmall;
       }
     }
-
+    /* Returns 4 components: Modal, Top, Lifelines and QnA*/
     return (
       <div style={{ backgroundImage: `url(${bgimg})` }}
         className={classes.App} >

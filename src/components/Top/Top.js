@@ -4,7 +4,7 @@ import logo from '../../assets/img/logo.png';
 
 class Top extends Component {
     render() {
-
+        /*Dynamically generating the various levels and applying appropriate style based on the current level progress */
         let levels = Array(15)
             .fill()
             .map((el, i) => {
@@ -18,7 +18,7 @@ class Top extends Component {
             })
             .reverse()
 
-
+        /*Returning the central image and the levels */
         return (
             <div className={classes.Top} >
                 <div className={classes.CentralPicture}>
